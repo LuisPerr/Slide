@@ -1,0 +1,9 @@
+{
+    "server": "http://localhost:55442/api/",    
+    "port": 4400,
+    "SQL_user": "sa",
+    "SQL_password": "S0p0rt3",
+    "SQL_server": "192.168.20.99",
+    "SQL_database": "GA_Visualizador",
+    "SQL_connectionTimeout": 60000
+}
