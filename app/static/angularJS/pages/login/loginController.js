@@ -1,4 +1,5 @@
 app.controller('loginController', function($scope, $location, $state, User, AlertFactory, New) {
+    console.log('HEEEY')
     if( localStorage.getItem('rfcUser') !== undefined){
         $scope.rfc = localStorage.getItem('rfcUser');
     }else{

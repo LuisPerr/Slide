@@ -1,6 +1,5 @@
 {
-    "server": "http://localhost:55442/api/",    
-    "port": 4400,
+    "port": 5200,
     "SQL_user": "sa",
     "SQL_password": "S0p0rt3",
     "SQL_server": "192.168.20.99",

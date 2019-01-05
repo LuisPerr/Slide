@@ -6,7 +6,7 @@ var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies'])
         });
         $stateProvider
             .state('login', {
-                url: '/',
+                url: '/login',
                 views: {
                     admin: {
                         templateUrl: '/angularJS/templates/login.html',
@@ -23,6 +23,24 @@ var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies'])
                     }
                 }
 
+            })
+            .state('inicio', {
+                url: '/',
+                views: {
+                    admin: {
+                        templateUrl: '/angularJS/templates/inicio.html',
+                        controller: 'inicioController'
+                    }
+                }
+            })
+            .state('administrador', {
+                url: '/administrador',
+                views: {
+                    admin: {
+                        templateUrl: '/angularJS/templates/administrador.html',
+                        controller: 'adminController'
+                    }
+                }
             })
         $urlRouterProvider.otherwise('/');
     });
