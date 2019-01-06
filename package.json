@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "angular-drag-and-drop-lists": "^2.1.0",
+    "angular-ui-carousel": "^0.1.10",
     "body-parser": "^1.9.2",
     "express": "4.9.8",
     "jsonwebtoken": "^6.2.0",

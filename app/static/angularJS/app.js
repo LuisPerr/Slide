@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies', 'dndLists'])
+var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies', 'dndLists', 'ui.carousel'])
     .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
         $locationProvider.html5Mode({
             enabled: true,

@@ -1,5 +1,26 @@
-
 <h1>Hola prueba</h1>
 
+<h2>Carousel</h2>
+<div >
+    <h2>{{title}}</h2>
+    <div class="box-container">
+        <ui-carousel slides="slides" on-init="onCarouselInit()" slides-to-show="3"
+            slides-to-scroll="1" initial-slide="0">
+            
+            <carousel-item>
+                <h2>{{ item.title }}</h2>
+                <img src="{{ item.image }}" alt="Image" />
+            </carousel-item>
 
-<button class="prueba" ng-click="prueba()" >HOLA</button>
+            <carousel-prev>
+                <button>Prev</button>
+            </carousel-prev>
+
+            <carousel-next>
+                <button>next</button>
+            </carousel-next>
+        </ui-carousel>
+    </div>
+</div>
+
+<button class="prueba" ng-click="prueba()">HOLA</button>
