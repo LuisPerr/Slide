@@ -3,23 +3,23 @@ app.controller('inicioController', function ($scope, $location, $state, User, Al
 
     $scope.slides = [
         {
-            title: "1 title",
+            title: "El primero",
             image: 'http://lorempixel.com/560/400/sports/1',
         },
         {
-            title: "2 title",
+            title: "El segundo",
             image: 'http://lorempixel.com/560/400/sports/2',
         },
         {
-            title: "3 title",
+            title: "El tercero",
             image: 'http://lorempixel.com/560/400/sports/3',
         },
         {
-            title: "4 title",
+            title: "El cuarto",
             image: 'http://lorempixel.com/560/400/sports/4',
         },
         {
-            title: "5 title",
+            title: "El quinto",
             image: 'http://lorempixel.com/560/400/sports/5',
         },
     ];
