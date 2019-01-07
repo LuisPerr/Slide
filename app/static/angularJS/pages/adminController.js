@@ -2,7 +2,7 @@ app.controller('adminController', function($scope, $location, $state, User, Aler
     $scope.mostrar = false;
     $scope.models = {
         selected: null,
-        lists: {"A": [{nombre: ''}], "B": []}
+        lists: {"A": [{nombre: 'holaaaa'}], "B": []}
     };
     $scope.input = $scope.models.lists.A[0].nombre
     // Generate initial model
