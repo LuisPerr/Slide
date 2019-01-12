@@ -1,13 +1,16 @@
 var request = require('request');
 var multer = require('multer')
 var uuid = require('uuid');
+var filtroView = require('../views/reference'),
+    filtroModel = require('../models/dataAccess');
+
 
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'app/static/files/')
     },
     filename: function(req, file, cb) {
-        cb(null, uuid.v4() + "." + file.mimetype.substring(file.mimetype.indexOf("/") + 1))
+        cb(null, file.originalname + "." + file.mimetype.substring(file.mimetype.indexOf("/") + 1))
     }
 })
 
@@ -18,10 +21,13 @@ var upload = multer({
 
 var FileUpload = function(conf) {
     this.conf = conf || {};
-    if (conf) {
-        //this.url = this.conf.parameters.server + "cargaapi/"
-		console.log('OK');
-    }
+
+     this.view = new filtroView();
+    this.model = new filtroModel({
+        parameters: this.conf.parameters
+    });
+
+   
     this.response = function() {
         this[this.conf.funcionalidad](this.conf.req, this.conf.res, this.conf.next);
     }
@@ -29,6 +35,30 @@ var FileUpload = function(conf) {
         upload.array('file[]')
     ]
 }
+
+FileUpload.prototype.post_filesComplementos = function(req, res, next) {
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+    };
+
+    var self = this;
+
+    
+   var params = [                  
+                   { name: 'nombre', value: req.files[0].originalname, type: self.model.types.STRING },
+                   { name: 'titulo', value: req.body.titulo, type: self.model.types.STRING }
+     ];
+
+    this.model.query('INS_TABLERO_SP', params, function(error, result) {
+        self.view.expositor(res, {
+            error: error,
+            result: result
+        });
+    });
+   
+}
+
 
 FileUpload.prototype.post_files = function(req, res, next) {
     String.prototype.replaceAll = function(search, replacement) {

@@ -1,16 +1,19 @@
 app.controller('personalizaController', function ($scope, $location, $state, User, AlertFactory) {
     console.log("personalizaController");
 
- var dropzone = new Dropzone("#fileUploadImg", {
-        url: "api/fileUpload/files/",
-        uploadMultiple: false,
+    $scope.nomTablero = "";
+ // Función para subir los archivos de PDF y XML COMPLEMENTOS !!!! 
+    var dropzone = new Dropzone("#fileUploadComplementos", {
+        url: "api/fileUpload/filesComplementos/",
+        uploadMultiple: true,
+        autoProcessQueue: false,
         maxFiles: 1,
-        dictDefaultMessage: "Selecciona Imagen",
+        dictDefaultMessage: "Selecciona el XML y el PDF",
         dictRemoveFile: "Cancelar",
         dictCancelUpload: "Cancelar subida",
         dictCancelUploadConfirmation: "Estas seguro de cancelar la subida de este archivo?",
         addRemoveLinks: true,
-        acceptedFiles: "image/*",
+        acceptedFiles: "image/jpeg,image/png,image/gif,image/jpg",
 
         init: function() {
             var self = this;
@@ -30,24 +33,29 @@ app.controller('personalizaController', function ($scope, $location, $state, Use
             });
             this.on("successmultiple", function(event, res) {
                 $scope.uploadButton = false;
-                //dropzone.removeAllFiles();
+                dropzone.removeAllFiles();
                 $scope.uploadButton = false;
                 $scope.closeButton = true;
                 $scope.$apply()
             });
-             this.on("sending", function(file, xhr, formData) {
-                 formData.append("provider", 1);
-            //     formData.append("rfc", File.order.rfc);
-            //     formData.append("folio", File.order.folio);
-            //     formData.append("idRol", File.order.idRol);
-            //     formData.append("rfcProvider", File.order.rfcProvider);
-            //     formData.append("tipoDocumento", 3); // tipo 3 complemento de pago
-             })
+            this.on("sending", function(file, xhr, formData) {
+                formData.append("titulo", $scope.nomTablero);
+            })
         }
     });
 
-    $scope.uploadInvoice = function() {
+        $scope.uploadInvoice = function() {
+      
         dropzone.processQueue();
     };
+
+
+        // Acciones a hacer cuando se cierra la modal
+        $('#subeComplemento').on('hidden.bs.modal', function(e) {
+            $scope.uploadButton = false;
+            dropzone.removeAllFiles();
+        });
+    
+
 
 });
