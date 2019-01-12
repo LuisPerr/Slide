@@ -62,36 +62,31 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" dnd-list="models.lists.A" style="background-color:yellow">
         <div class="col-sm-8">
             <div class="tableritos">
                 <ul class="list-inline">
-                    <li>
+                    <li  ng-repeat="item in models.lists.A" dnd-draggable="item" dnd-moved="models.lists.A.splice($index, 1)"
+                    dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
                         <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                            <div class="eliminat2 showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;"
-                                style="display:none;"><img src="img/eliminat.png" width="70%"></div>
-                            <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                            <h2 class="titltb d-red">Productividad</h2>
+                            <!-- <div class="eliminat2 showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;"
+                                style="display:none;">
+                                <img src="img/eliminat.png" width="100px" height="200px">
+                            </div> -->
+                            <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="100px" height="100px">
+                            <h2 class="titltb d-red">{{item.Img_Titulo}}</h2>
                         </a>
-                        <div class="cuadritos">
-                            <ul class="list-inline">
-                                <li><a href="#" class="c-activo"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                                <li><a href="#"></a></li>
-                            </ul>
-                        </div>
                     </li>
                 </ul>
+                </ul> 
             </div>
         </div>
         <div class="col-sm-4">
             <br><br><br><br><br>
-            <div class="btns-option">
+            <div class="btns-option" ng-show="guardarBtns">
                 <ul class="list-inline">
                     <li><a href="#">cancelar</a></li>
-                    <li><a href="#" class="btn-activo">guardar</a></li>
+                    <li><a ng-click="saveTablero()" class="btn-activo">guardar</a></li>
                 </ul>
             </div>
         </div>
@@ -106,13 +101,14 @@
         </ul>
     </div>
 </div>
-
-<section class="contenido-perzonaliza">
-    <div class="row">
-        <div class="col-sm-3" ng-repeat="tablero in allTableros">
+<br><br><br>
+<section class="contenido-perzonaliza" style="padding-top: 10%;">
+    <div class="row" dnd-list="models.lists.B" style="height: 400px;">
+        <div class="col-sm-3" ng-repeat="item in models.lists.B" dnd-draggable="item" dnd-moved="models.lists.B.splice($index, 1)"
+            dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
             <a href="#" class="b-red spacedown">
-                <img class="imagemodulo" alt="Image Caption" ng-src="{{tablero.imagen}}">
-                <h2 class="titltb d-red">{{tablero.Img_Titulo}}</h2>
+                <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="150px" height="150px">
+                <h2 class="titltb d-red">{{item.Img_Titulo}}</h2>
             </a>
         </div>
     </div>
@@ -134,8 +130,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <br>
-                        <button ng-show="uploadButton" ng-click="uploadInvoice()" class="btn btn-primary btn-block" ng-disable="nomTablero == null || nomTablero == undefined || nomTablero == ''"
-                            type="button" name="button">Guardar Tablero</button>
+                        <button ng-show="uploadButton" ng-click="uploadInvoice()" class="btn btn-primary btn-block"
+                            ng-disable="nomTablero == null || nomTablero == undefined || nomTablero == ''" type="button"
+                            name="button">Guardar Tablero</button>
                         <button ng-show="uploadButton" data-dismiss="modal" class="btn btn-success btn-block" type="button"
                             name="button">Cerrar</button>
                         <br>

@@ -1,5 +1,10 @@
 app.controller('personalizaController', function ($scope, $location, $state, Personaliza, AlertFactory) {
     $scope.allTableros = [];
+    $scope.models = {
+        selected: null,
+        lists: {"A": [], "B": []}
+    };
+    $scope.guardarBtns = false;
 
     $scope.init = function () {
         $scope.getAllTableros();
@@ -70,8 +75,7 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
         $scope.allTableros = [];
         Personaliza.allTableros().then(function(response) {
             if(response.data.length > 0){
-                $scope.allTableros = response.data;
-                console.log( '$scope.allTableros', $scope.allTableros );
+                $scope.models.lists.B = response.data;
             }else{
 
             }
@@ -81,4 +85,16 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
         });
     };
 
+    $scope.$watch('models', function(model) {
+        $scope.modelAsJson = angular.toJson(model, true);
+        if($scope.models.lists.A.length === 5){
+            $scope.guardarBtns = true;
+        }else{
+            $scope.guardarBtns = false;
+        }
+    }, true);
+
+    $scope.saveTablero = function(){
+        console.log( '$scope.models.lists.A', $scope.models.lists.A );
+    }
 });
