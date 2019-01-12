@@ -1,145 +1,147 @@
 <script type="text/javascript">
 
-            function eliminar_tablero_show1(){ 
-                $(".showandohide1").show();
-            }
-            function eliminar_tablero_hidden1(){ 
-                $(".showandohide1").hide();
-            }
-            function eliminar_tablero_show2(){ 
-                $(".showandohide2").show();
-            }
-            function eliminar_tablero_hidden2(){ 
-                $(".showandohide2").hide();
-            }
-            function eliminar_tablero_show3(){ 
-                $(".showandohide3").show();
-            }
-            function eliminar_tablero_hidden3(){ 
-                $(".showandohide3").hide();
-            }
-            function eliminar_tablero_show4(){ 
-                $(".showandohide4").show();
-            }
-            function eliminar_tablero_hidden4(){ 
-                $(".showandohide4").hide();
-            }
-            function eliminar_tablero_show5(){ 
-                $(".showandohide5").show();
-            }
-            function eliminar_tablero_hidden5(){ 
-                $(".showandohide5").hide();
-            }
-        </script>
-     <section class="contenido-perzonaliza">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="titulo-perzonaliza">
-                        <h1>Personalizar pantallas</h1>
-                    </div>
-                </div>
+    function eliminar_tablero_show1() {
+        $(".showandohide1").show();
+    }
+    function eliminar_tablero_hidden1() {
+        $(".showandohide1").hide();
+    }
+    function eliminar_tablero_show2() {
+        $(".showandohide2").show();
+    }
+    function eliminar_tablero_hidden2() {
+        $(".showandohide2").hide();
+    }
+    function eliminar_tablero_show3() {
+        $(".showandohide3").show();
+    }
+    function eliminar_tablero_hidden3() {
+        $(".showandohide3").hide();
+    }
+    function eliminar_tablero_show4() {
+        $(".showandohide4").show();
+    }
+    function eliminar_tablero_hidden4() {
+        $(".showandohide4").hide();
+    }
+    function eliminar_tablero_show5() {
+        $(".showandohide5").show();
+    }
+    function eliminar_tablero_hidden5() {
+        $(".showandohide5").hide();
+    }
+</script>
+<section class="contenido-perzonaliza" ng-init="init()">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="titulo-perzonaliza">
+                <h1>Personalizar pantallas</h1>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="dealta">
-                        <h2>Nombre del grupo de pantallas</h2>
-                        <input type="text">
-                    </div>
-                </div>
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <br><br><br>
-                    <div class="cajabus">
-                        <a href="#" class="iconbus"><span class="lnr lnr-magnifier"></span></a>
-                        <input type="text" class="caja2" placeholder="Buscar tableros">
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="dealta">
+                <h2>Nombre del grupo de pantallas</h2>
+                <input type="text">
             </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="dealta">
-                        <h2>Tableros seleccionados: 5</h2>
-                    </div>
-                </div>
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <br><br><br>
+            <div class="cajabus">
+                <a href="#" class="iconbus"><span class="lnr lnr-magnifier"></span></a>
+                <input type="text" class="caja2" placeholder="Buscar tableros">
             </div>
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="tableritos">
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                                    <div class="eliminat2 showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png" width="70%"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </li>                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <br><br><br><br><br>
-                    <div class="btns-option">
-                        <ul class="list-inline">
-                            <li><a href="#">cancelar</a></li>
-                            <li><a href="#" class="btn-activo">guardar</a></li>
-                        </ul>
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="dealta">
+                <h2>Tableros seleccionados: 5</h2>
             </div>
-        </section>
-     
-        	 <div class="col-sm-12">
-                    <br><br><br><br><br>
-                    <div class="btns-option">
-                        <ul>
-                           <li style="text-align: right !important"><a href="#" class="btn-activo" data-toggle="modal" data-target="#subeImagen">Nuevo</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-        <section class="contenido-perzonaliza">
-        	
-            <div class="row ">
-                <div class="col-sm-3">
-                    <a href="#" class="b-red spacedown">
-                        <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                        <h2 class="titltb d-red">Productividad</h2>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    <div class="modal fade" id="subeImagen" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" ng-click="limpia()">&times;</button>
-                    <h4>Nuevo Tablero</h4>
-                    <br>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        Nombre : <input type="text" name="nomTablero" ng-model="nomTablero">
-                    </div>
-                    <form class="dropzone" id="fileUploadComplementos"></form>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <br>
-                            <button ng-show="uploadButton" ng-click="uploadInvoice()" class="btn btn-primary btn-block" type="button" name="button">Subir Complemento</button>
-                            <button ng-show="uploadButton" data-dismiss="modal" class="btn btn-success btn-block" type="button" name="button">Cerrar</button>
-                            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="tableritos">
+                <ul class="list-inline">
+                    <li>
+                        <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
+                            <div class="eliminat2 showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;"
+                                style="display:none;"><img src="img/eliminat.png" width="70%"></div>
+                            <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
+                            <h2 class="titltb d-red">Productividad</h2>
+                        </a>
+                        <div class="cuadritos">
+                            <ul class="list-inline">
+                                <li><a href="#" class="c-activo"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                                <li><a href="#"></a></li>
+                            </ul>
                         </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <br><br><br><br><br>
+            <div class="btns-option">
+                <ul class="list-inline">
+                    <li><a href="#">cancelar</a></li>
+                    <li><a href="#" class="btn-activo">guardar</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="col-sm-12">
+    <br><br><br><br><br>
+    <div class="btns-option">
+        <ul>
+            <li style="text-align: right !important"><a href="#" class="btn-activo" data-toggle="modal" data-target="#subeImagen">Nuevo</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="contenido-perzonaliza">
+    <div class="row">
+        <div class="col-sm-3" ng-repeat="tablero in allTableros">
+            <a href="#" class="b-red spacedown">
+                <img class="imagemodulo" alt="Image Caption" ng-src="{{tablero.imagen}}">
+                <h2 class="titltb d-red">{{tablero.Img_Titulo}}</h2>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="subeImagen" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="limpia()">&times;</button>
+                <h4 style="color: white;">Nuevo Tablero</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="usr">Nombre:</label>
+                    <input type="text" class="form-control" name="nomTablero" ng-model="nomTablero">
+                </div>
+                <form class="dropzone" id="fileUploadComplementos"></form>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                        <button ng-show="uploadButton" ng-click="uploadInvoice()" class="btn btn-primary btn-block" ng-disable="nomTablero == null || nomTablero == undefined || nomTablero == ''"
+                            type="button" name="button">Guardar Tablero</button>
+                        <button ng-show="uploadButton" data-dismiss="modal" class="btn btn-success btn-block" type="button"
+                            name="button">Cerrar</button>
+                        <br>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
