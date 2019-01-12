@@ -66,8 +66,8 @@
         <div class="col-sm-8">
             <div class="tableritos">
                 <ul class="list-inline">
-                    <li  ng-repeat="item in models.lists.A" dnd-draggable="item" dnd-moved="models.lists.A.splice($index, 1)"
-                    dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+                    <li ng-repeat="item in models.lists.A" dnd-draggable="item" dnd-moved="models.lists.A.splice($index, 1)"
+                        dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
                         <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
                             <!-- <div class="eliminat2 showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;"
                                 style="display:none;">
@@ -78,7 +78,7 @@
                         </a>
                     </li>
                 </ul>
-                </ul> 
+                </ul>
             </div>
         </div>
         <div class="col-sm-4">
@@ -105,9 +105,9 @@
 <section class="contenido-perzonaliza" style="padding-top: 10%;">
     <div class="row" dnd-list="models.lists.B" style="height: 400px;">
         <div class="col-sm-3" ng-repeat="item in models.lists.B" dnd-draggable="item" dnd-moved="models.lists.B.splice($index, 1)"
-            dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+            dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}" data-toggle="modal" data-target="#editaImagen" ng-click="edita(tablero)">
             <a href="#" class="b-red spacedown">
-                <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="150px" height="150px">
+                <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="150px" height="150px" >
                 <h2 class="titltb d-red">{{item.Img_Titulo}}</h2>
             </a>
         </div>
@@ -135,6 +135,35 @@
                             name="button">Guardar Tablero</button>
                         <button ng-show="uploadButton" data-dismiss="modal" class="btn btn-success btn-block" type="button"
                             name="button">Cerrar</button>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editaImagen" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="limpia()">&times;</button>
+                <h4 style="color: white;">Editar Tablero</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="usr">Nombre:</label>
+                    <input type="text" class="form-control" name="nomTablero" ng-model="imagenSel.Img_Titulo">
+                </div>
+                <img class="imagemodulo" alt="Image Caption" ng-src="{{imagenSel.imagen}}">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                        <button ng-click="guardar(imagenSel,1)" class="btn btn-primary btn-block" ng-disable="nomTablero == null || nomTablero == undefined || nomTablero == ''"
+                            type="button" name="button">Guardar Tablero</button>
+                        <button data-dismiss="modal" class="btn btn-danger btn-block" type="button" name="button"
+                            ng-click="guardar(imagenSel,0)">Eliminar</button>
+                        <button data-dismiss="modal" class="btn btn-success btn-block" type="button" name="button">Cerrar</button>
                         <br>
                     </div>
                 </div>

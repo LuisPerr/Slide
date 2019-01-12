@@ -94,6 +94,24 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
         }
     }, true);
 
+    $scope.edita = function(imagenSel){
+        $scope.imagenSel = imagenSel;
+    }
+
+    $scope.guardar = function(tablero,opc){
+
+        Personaliza.guarda(tablero.Img_id,tablero.Img_Titulo,opc).then(function(response) {
+            if(response.data.length > 0)
+                 AlertFactory.info('Tablero Guardado con exito');
+             else
+                 AlertFactory.info('Intentelo mas tarde');
+                
+        }, function(error) {
+            $scope.pass = ''
+            AlertFactory.error('Intentelo mas tarde')
+        });
+    }
+
     $scope.saveTablero = function(){
         console.log( '$scope.models.lists.A', $scope.models.lists.A );
     }
