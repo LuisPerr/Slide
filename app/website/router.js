@@ -8,5 +8,6 @@
     usuario: require('./controllers/user'),
     noticia: require('./controllers/noticia'),
     alerta: require('./controllers/alerta'),
-    filtro: require('./controllers/filtro')
+    filtro: require('./controllers/filtro'),
+    upLoadImg: require('./controllers/upLoadImg')
  }

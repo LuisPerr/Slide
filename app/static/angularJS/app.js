@@ -42,6 +42,15 @@ var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies', 'dndLis
                     }
                 }
             })
+            .state('personaliza', {
+                url: '/personaliza',
+                views: {
+                    admin: {
+                        templateUrl: '/angularJS/templates/personaliza.html',
+                        controller: 'personalizaController'
+                    }
+                }
+            })
         $urlRouterProvider.otherwise('/');
     });
 
