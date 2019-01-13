@@ -190,7 +190,19 @@
                 <div class="form-group">
                     <label for="usr">¿Estas seguro de guardar los tableros?</label>
                 </div>
-                <div class="row">
+                <div ng-show="loadingOrder" class="sk-cube-grid">
+                    <h2>Guardando...</h2>
+                    <div class="sk-cube sk-cube1"></div>
+                    <div class="sk-cube sk-cube2"></div>
+                    <div class="sk-cube sk-cube3"></div>
+                    <div class="sk-cube sk-cube4"></div>
+                    <div class="sk-cube sk-cube5"></div>
+                    <div class="sk-cube sk-cube6"></div>
+                    <div class="sk-cube sk-cube7"></div>
+                    <div class="sk-cube sk-cube8"></div>
+                    <div class="sk-cube sk-cube9"></div>
+                  </div>
+                <div ng-show="!loadingOrder" class="row">
                     <div class="col-sm-12">
                         <br>
                         <button ng-click="saveTablero()" class="btn btn-primary btn-block" type="button" name="button">

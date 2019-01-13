@@ -8,6 +8,7 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
     $scope.nombreGrupo = '';
     $scope.ver = true;
     $scope.isSearching = false;
+    $scope.loadingOrder = false;
 
     $scope.init = function () {
         $scope.getAllTableros();
@@ -113,6 +114,7 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
             AlertFactory.info('Debes ponerle un nombre a los tableros');
         }else{
             if( $scope.models.lists.A.length === 5 ){
+                $scope.loadingOrder = true;
                 Personaliza.guardaNombreTablero($scope.nombreGrupo).then(function(response){
                     console.log(response.data[0].msj)
                     if( response.data[0].msj == 'Ok' ){
@@ -137,6 +139,7 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
                 };
             });
         }else{
+            $scope.loadingOrder = false;
             AlertFactory.success('Se guardo con éxito.');
             $('#saveGrupos').modal('hide');
         };
