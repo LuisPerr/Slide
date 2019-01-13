@@ -51,6 +51,15 @@ var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies', 'dndLis
                     }
                 }
             })
+             .state('home', {
+                url: '/home',
+                views: {
+                    admin: {
+                        templateUrl: '/angularJS/templates/home.html',
+                        controller: 'homeController'
+                    }
+                }
+            })
         $urlRouterProvider.otherwise('/');
     });
 
