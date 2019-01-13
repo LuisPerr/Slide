@@ -95,4 +95,18 @@ Personaliza.prototype.post_guarda = function (req, res, next) {
 
 };
 
+Personaliza.prototype.get_nombreTablero = function (req, res, next) {
+    var self = this;
+    var params = [
+        { name: 'nombre', value: req.query.nombre, type: self.model.types.STRING }
+    ];
+    this.model.query('INS_GRUPO_SP', params, function (error, result) {
+        self.view.expositor(res, {
+            error: error,
+            result: result
+        });
+    });
+
+};
+
 module.exports = Personaliza;

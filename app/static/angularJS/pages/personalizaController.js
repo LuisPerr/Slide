@@ -5,6 +5,7 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
         lists: {"A": [], "B": []}
     };
     $scope.guardarBtns = false;
+    $scope.nombreGrupo = '';
 
     $scope.init = function () {
         $scope.getAllTableros();
@@ -113,6 +114,8 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
     }
 
     $scope.saveTablero = function(){
-        console.log( '$scope.models.lists.A', $scope.models.lists.A );
+        Personaliza.guardaNombreTablero($scope.nombreGrupo).then(function(response){
+            console.log('response', response);
+        });
     }
 });
