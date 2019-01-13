@@ -107,10 +107,39 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
         $('#editaImagen').modal('hide');
     };
 
+    //Guarda la cabecera de los tableros
     $scope.saveTablero = function(){
-        Personaliza.guardaNombreTablero($scope.nombreGrupo).then(function(response){
-            console.log('response', response);
-        });
+        if( $scope.nombreGrupo == '' ){
+            AlertFactory.info('Debes ponerle un nombre a los tableros');
+        }else{
+            if( $scope.models.lists.A.length === 5 ){
+                Personaliza.guardaNombreTablero($scope.nombreGrupo).then(function(response){
+                    console.log(response.data[0].msj)
+                    if( response.data[0].msj == 'Ok' ){
+                        $scope.saveGrupoTablero(response.data[0].idGrupo, 0);
+                    }else{
+                        AlertFactory.info('Ocurrio un problema intentelo mas tarde.');
+                    }
+                });
+            }else{
+                AlertFactory.info('Solo puedes elegir 5 elementos para el tablero'); 
+            }
+        };
+    };
+
+    $scope.saveGrupoTablero = function(idGrupo, idArreglo){
+        if( idArreglo <= $scope.models.lists.A.length -1 ){
+            Personaliza.guardaDetalleGrupo(idGrupo, $scope.models.lists.A[idArreglo].Img_id).then(function(response){
+                if( response.data[0].success == 1 ){
+                    $scope.saveGrupoTablero( idGrupo, idArreglo + 1 );
+                }else{
+                    AlertFactory.info('Ocurrio un problema al guardar el grupo completo intentelo mas tarde.');
+                };
+            });
+        }else{
+            AlertFactory.success('Se guardo con éxito.');
+            $('#saveGrupos').modal('hide');
+        };
     };
 
     $scope.activaNuevo = function(imagenSel){

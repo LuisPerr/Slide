@@ -95,6 +95,7 @@ Personaliza.prototype.post_guarda = function (req, res, next) {
 
 };
 
+//Guarda la cabecera del grupo
 Personaliza.prototype.get_nombreTablero = function (req, res, next) {
     var self = this;
     var params = [
@@ -106,7 +107,22 @@ Personaliza.prototype.get_nombreTablero = function (req, res, next) {
             result: result
         });
     });
+};
 
+//Guarda el detalle del grupo
+Personaliza.prototype.get_detalleGrupo = function (req, res, next) {
+    var self = this;
+    var params = [
+        { name: 'grupo_id', value: req.query.idGrupo, type: self.model.types.INT },
+        { name: 'img_id', value: req.query.idImagen, type: self.model.types.INT }
+    ];
+    
+    this.model.query('INS_GRUPO_DETALLE_SP', params, function (error, result) {
+        self.view.expositor(res, {
+            error: error,
+            result: result
+        });
+    });
 };
 
 module.exports = Personaliza;

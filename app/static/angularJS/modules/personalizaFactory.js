@@ -18,5 +18,13 @@ app.factory("Personaliza", function($http, $cookies) {
                 params:{nombre:nombre}
             });
         },
+        guardaDetalleGrupo: function(idGrupo, idImagen) {
+            return $http.get(urlTableros + 'detalleGrupo', {
+                params:{
+                    idGrupo: idGrupo,
+                    idImagen: idImagen
+                }
+            });
+        }
     }
 });
