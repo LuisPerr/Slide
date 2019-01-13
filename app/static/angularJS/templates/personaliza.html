@@ -51,7 +51,7 @@
             <br><br><br>
             <div class="cajabus">
                 <a href="#" class="iconbus"><span class="lnr lnr-magnifier"></span></a>
-                <input type="text" class="caja2" placeholder="Buscar tableros">
+                <input type="text" class="form-control" placeholder="Introduzca una palabra buscar..." id="slideIzq" ng-model="text" ng-change="TextSearch()" />
             </div>
         </div>
     </div>
@@ -91,21 +91,31 @@
 <div class="col-sm-12">
     <br><br><br><br><br>
     <div class="btns-option">
-        <ul>
-            <li style="text-align: right !important"><a href="#" class="btn-activo" data-toggle="modal" data-target="#subeImagen">Nuevo</a></li>
+        <ul class="list-inline">
+            <li id="n" style="text-align: right !important" ng-click="activaNuevo()"><a href="#" class="btn-activo" data-toggle="modal" data-target="#subeImagen">Nuevo</a></li>
+            <li id="e" style="text-align: right !important" ng-click="activaEditar()"><a href="#">Editar</a></li>
         </ul>
     </div>
 </div>
 <br><br><br>
 <section class="contenido-perzonaliza" style="padding-top: 10%;">
-    <div class="row" dnd-list="models.lists.B" style="height: 400px;">
-        <div class="col-sm-3" ng-repeat="item in models.lists.B" dnd-draggable="item" dnd-moved="models.lists.B.splice($index, 1)"
+    <div class="row" dnd-list="models.lists.B" style="height: 400px;" ng-show="ver">
+        <div class="col-sm-3" ng-repeat="item in models.lists.B | filter:keySearch " dnd-draggable="item" dnd-moved="models.lists.B.splice($index, 1)"
             dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
-            <a href="#" data-toggle="modal" data-target="#editaImagen" ng-click="edita(item)" class="b-red spacedown">
+            <a  data-toggle="modal" data-target="#editaImagen" ng-click="edita(item)" class="b-red spacedown">
                 <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="150px" height="150px">
                 <h2 class="titltb d-red">{{item.Img_Titulo}}</h2>
             </a>
             <!-- <a href="#" data-toggle="modal" data-target="#editaImagen" ng-click="edita(item)">HHJSAHKAJ</a> -->
+        </div>
+    </div>
+    <div class="row" dnd-list="models.lists.B" style="height: 400px;" ng-hide="ver">
+        <div class="col-sm-3" ng-repeat="item in models.lists.B | filter:keySearch "  dnd-moved="models.lists.B.splice($index, 1)"
+            dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
+            <a  data-toggle="modal" data-target="#editaImagen" ng-click="edita(item)" class="b-red spacedown">
+                <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="150px" height="150px">
+                <h2 class="titltb d-red">{{item.Img_Titulo}}</h2>
+            </a>
         </div>
     </div>
 </section>
@@ -130,7 +140,7 @@
                             ng-disable="nomTablero == null || nomTablero == undefined || nomTablero == ''" type="button"
                             name="button">Guardar Tablero</button>
                         <button ng-show="uploadButton" data-dismiss="modal" class="btn btn-success btn-block" type="button"
-                            name="button">Cerrar</button>
+                            name="button" ng-click="limpia()">Cerrar</button>
                         <br>
                     </div>
                 </div>

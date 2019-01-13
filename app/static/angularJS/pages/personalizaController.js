@@ -6,13 +6,15 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
     };
     $scope.guardarBtns = false;
     $scope.nombreGrupo = '';
+    $scope.ver = true;
+    $scope.isSearching = false;
 
     $scope.init = function () {
         $scope.getAllTableros();
     };
 
     $scope.nomTablero = "";
-    // Función para subir los archivos de PDF y XML COMPLEMENTOS !!!! 
+    
     var dropzone = new Dropzone("#fileUploadComplementos", {
         url: "api/personaliza/filesComplementos/",
         uploadMultiple: true,
@@ -43,11 +45,7 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
             });
             this.on("success", function(event, res) {
                 AlertFactory.info('Tablero Guardado con exito');
-                 $scope.uploadButton = false;
-                 dropzone.removeAllFiles();
-                 $scope.uploadButton = false;
-                 $scope.closeButton = true;
-                 $scope.nomTablero = "";
+                 $scope.limpia();
                  $('#subeImagen').modal('hide');
                  $scope.$apply()
                  $scope.getAllTableros();
@@ -59,17 +57,8 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
     });
 
     $scope.uploadInvoice = function () {
-
         dropzone.processQueue();
     };
-
-
-    // Acciones a hacer cuando se cierra la modal
-    $('#subeComplemento').on('hidden.bs.modal', function (e) {
-        $scope.uploadButton = false;
-        $scope.nomTablero = "";
-        dropzone.removeAllFiles();
-    });
 
     //GetTaleros
     $scope.getAllTableros = function(){
@@ -97,13 +86,13 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
 
     $scope.edita = function(imagenSel){
         $scope.imagenSel = imagenSel;
-    }
+    };
 
     $scope.guardar = function(tablero,opc){
 
         Personaliza.guarda(tablero.Img_id,tablero.Img_Titulo,opc).then(function(response) {
             if(response.data.length > 0)
-                 AlertFactory.info('Tablero Guardado con exito');
+                 AlertFactory.info('Exito');
              else
                  AlertFactory.info('Intentelo mas tarde');
                 
@@ -111,11 +100,59 @@ app.controller('personalizaController', function ($scope, $location, $state, Per
             $scope.pass = ''
             AlertFactory.error('Intentelo mas tarde')
         });
-    }
+        $scope.ver = true;
+        $('#e a').removeAttr('class');
+        $('#n a').attr( 'class', 'btn-activo' );
+        $scope.getAllTableros();
+        $('#editaImagen').modal('hide');
+    };
 
     $scope.saveTablero = function(){
         Personaliza.guardaNombreTablero($scope.nombreGrupo).then(function(response){
             console.log('response', response);
         });
-    }
+    };
+
+    $scope.activaNuevo = function(imagenSel){
+        $scope.ver = true;
+        $('#e a').removeAttr('class');
+        $('#n a').attr( 'class', 'btn-activo' );
+    };
+
+    $scope.activaEditar = function () {
+        $scope.ver = false;
+        $('#n a').removeAttr('class');
+        $('#e a').attr( 'class', 'btn-activo' );
+    };
+
+    $scope.limpia = function () {
+        $scope.uploadButton = false;
+        dropzone.removeAllFiles();
+        $scope.uploadButton = false;
+        $scope.closeButton = true;
+        $scope.nomTablero = " ";
+    };
+
+    $scope.ViewSearch = function() {
+        $scope.isSearching = !$scope.isSearching;
+        $("#slideIzq").animate({
+            width: "toggle"
+        });
+        if ($scope.isSearching == false) {
+            $('#slideIzq').blur();
+            $('#slideIzq').val('');
+            $scope.keySearch = '';
+        }
+    };
+
+    $scope.TextSearch = function() {
+        $scope.keySearch = $('#slideIzq').val();
+    };
+
+        // Acciones a hacer cuando se cierra la modal
+    $('#subeComplemento').on('hidden.bs.modal', function (e) {
+        $scope.uploadButton = false;
+        $scope.nomTablero = "";
+        dropzone.removeAllFiles();
+    });
 });

@@ -80,9 +80,9 @@ Personaliza.prototype.post_guarda = function (req, res, next) {
 
 
     var params = [
-        { name: 'Img_id', value: req.body.id, type: self.model.types.STRING },
+        { name: 'Img_id', value: req.body.id, type: self.model.types.INT },
         { name: 'Img_Titulo', value: req.body.titulo, type: self.model.types.STRING },
-        { name: 'estatus', value: req.body.estatus, type: self.model.types.STRING }
+        { name: 'estatus', value: req.body.estatus, type: self.model.types.INT }
     ];
  
     
