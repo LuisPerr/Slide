@@ -103,7 +103,6 @@ Personaliza.prototype.get_nombreTablero = function (req, res, next) {
         { name: 'idGrp', value: req.query.idGrp, type: self.model.types.INT }
     ];
     this.model.query('INS_GRUPO_SP', params, function (error, result) {
-        console.log('result', result);
         self.view.expositor(res, {
             error: error,
             result: result
@@ -116,7 +115,8 @@ Personaliza.prototype.get_detalleGrupo = function (req, res, next) {
     var self = this;
     var params = [
         { name: 'grupo_id', value: req.query.idGrupo, type: self.model.types.INT },
-        { name: 'img_id', value: req.query.idImagen, type: self.model.types.INT }
+        { name: 'img_id', value: req.query.idImagen, type: self.model.types.INT },
+        { name: 'posicion', value: req.query.posicion, type: self.model.types.INT }
     ];
     
     this.model.query('INS_GRUPO_DETALLE_SP', params, function (error, result) {

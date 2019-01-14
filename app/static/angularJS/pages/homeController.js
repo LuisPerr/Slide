@@ -19,9 +19,10 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 						$scope.cabeceraShow.push(value);
 					};
 				});
-				$scope.cabeceraShow.push({Grupo_Nombre: 'Personalizar', Grupo_id: 999999, imagen: '/files/personalizado.jpg'})
+				
 				console.log( '$scope.cabeceraShow', $scope.cabeceraShow );
 			};
+			$scope.cabeceraShow.push({Grupo_Nombre: 'Personalizar', Grupo_id: 999999, imagen: '/files/personalizado.jpg'})
 		});
 	};
 
@@ -39,6 +40,14 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 	//====================================
 	$scope.onCarouselInit = function () {
 		// console.log('carousel init');
+		if ($scope.cabeceraShow.length == 1) {
+		$scope.cuadritos = [
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"}
+			]; 
+		}
 	};
 
 	$scope.onCarouselAfterChange = function (dato) {
