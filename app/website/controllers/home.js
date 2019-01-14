@@ -27,6 +27,18 @@ Home.prototype.get_allHeaders = function (req, res, next) {
             result: result
         });
     });
-
 };
+
+Home.prototype.get_detalleGrupo = function (req, res, next) {
+    var self = this;
+    var params = [{ name: 'idGrupo', value: req.query.idGrupo, type: self.model.types.INT }];
+    
+    this.model.query('SEL_DETALLEGRUPO_SP', params, function (error, result) {
+        self.view.expositor(res, {
+            error: error,
+            result: result
+        });
+    });
+};
+
 module.exports = Home;

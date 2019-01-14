@@ -82,8 +82,8 @@ app.controller('personalizaController', function ($scope, $location, $state,$roo
         }else{
             if( $scope.models.lists.A.length === 5 ){
                 $scope.loadingOrder = true;
-                Personaliza.guardaNombreTablero($scope.nombreGrupo).then(function(response){
-                    console.log(response.data[0].msj)
+                Personaliza.guardaNombreTablero($scope.nombreGrupo, $scope.idGrp).then(function(response){
+                    console.log(response.data)
                     if( response.data[0].msj == 'Ok' ){
                         $scope.saveGrupoTablero(response.data[0].idGrupo, 0);
                     }else{
@@ -99,6 +99,7 @@ app.controller('personalizaController', function ($scope, $location, $state,$roo
     $scope.saveGrupoTablero = function(idGrupo, idArreglo){
         if( idArreglo <= $scope.models.lists.A.length -1 ){
             Personaliza.guardaDetalleGrupo(idGrupo, $scope.models.lists.A[idArreglo].Img_id).then(function(response){
+                console.log( 'response', response );
                 if( response.data[0].success == 1 ){
                     $scope.saveGrupoTablero( idGrupo, idArreglo + 1 );
                 }else{
@@ -107,8 +108,10 @@ app.controller('personalizaController', function ($scope, $location, $state,$roo
             });
         }else{
             $scope.loadingOrder = false;
-            AlertFactory.success('Se guardo con éxito.');
             $('#saveGrupos').modal('hide');
+            AlertFactory.success('Se guardo con éxito.');
+            setTimeout(function(){ $state.go('home'); }, 1000);
+            
         };
     };
 

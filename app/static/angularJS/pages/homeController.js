@@ -17,7 +17,8 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 						$scope.cabeceraShow.push(value);
 					};
 				});
-				console.log($scope.cabeceraShow)
+				$scope.cabeceraShow.push({Grupo_Nombre: 'Personalizar', Grupo_id: 999999, imagen: '/files/personalizado.jpg'})
+				console.log( '$scope.cabeceraShow', $scope.cabeceraShow );
 			};
 		});
 	};
@@ -33,4 +34,27 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 
 		$state.go('personaliza');
 	};
+
+	//====================================
+	$scope.onCarouselInit = function () {
+		// console.log('carousel init');
+	};
+
+	$scope.onCarouselAfterChange = function (dato) {
+		console.log($scope.cabeceraShow[dato].Grupo_id);
+		if($scope.cabeceraShow[dato].Grupo_id == 999999){
+			$scope.cuadritos = [
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
+				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"}
+			];
+		}else{
+			Home.detalleGrupo($scope.cabeceraShow[dato].Grupo_id).then(function(response){
+				$scope.cuadritos = response.data;
+				console.log('$scope.cuadritos', $scope.cuadritos);
+			});
+		};
+	};
+
 });

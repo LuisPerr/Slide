@@ -1,489 +1,63 @@
-
 <script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
 <button ng-click="irPersonalizar(1)">ok</button>
-    <div class="carousel-container" ng-init="init()">
-            <div id="carousel" class="sepa">
-                <div class="carousel-feature" ng-repeat="cabeza in cabeceraShow">
-                    <div class="showroom"><img src="img/showroom.png" width="80%"></div>
-                    <a href="#" class="b-blue" >
-                        <img class="imagemodulo" alt="Image Caption" ng-src="{{cabeza.imagen}}">
-                        <h2 class="titltb d-blue">{{cabeza.Grupo_Nombre}}</h2>
-                    </a>
-                    
-                    <div class="carousel-caption" >
-                        <div class="row idop">
-                            <div class="col-sm-1" >
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                                    <div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" ng-src="{{cabeza.imagen}}"">
-                                    <h2 class="titltb d-red">{{cabeza.Grupo_Nombre}}</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show2();" onmouseout="eliminar_tablero_hidden2();">
-                                    <div class="eliminat showandohide2" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show3();" onmouseout="eliminar_tablero_hidden3();">
-                                    <div class="eliminat showandohide3" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show4();" onmouseout="eliminar_tablero_hidden4();">
-                                    <div class="eliminat showandohide4" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-feature">
-                    <a href="#" class="b-red">
-                        <div class="showroom"><img src="img/showroom.png" width="80%"></div>
-                        <img class="imagemodulo" alt="Image Caption" src="img/tabla.jpg">
-                        <h2 class="titltb d-red">Productividad</h2>
-                    </a>
-                    <div class="carousel-caption">
-                        <div class="row idop">
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                                    <div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show2();" onmouseout="eliminar_tablero_hidden2();">
-                                    <div class="eliminat showandohide2" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show3();" onmouseout="eliminar_tablero_hidden3();">
-                                    <div class="eliminat showandohide3" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show4();" onmouseout="eliminar_tablero_hidden4();">
-                                    <div class="eliminat showandohide4" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-feature">
-                    <a href="#" class="b-red">
-                        <div class="showroom"><img src="img/showroom.png" width="80%"></div>
-                        <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                        <h2 class="titltb d-red">Productividad</h2>
-                    </a>
-                    <div class="carousel-caption">
-                        <div class="row idop">
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                                    <div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show2();" onmouseout="eliminar_tablero_hidden2();">
-                                    <div class="eliminat showandohide2" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show3();" onmouseout="eliminar_tablero_hidden3();">
-                                    <div class="eliminat showandohide3" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show4();" onmouseout="eliminar_tablero_hidden4();">
-                                    <div class="eliminat showandohide4" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-feature">
-                    <a href="#" class="b-blue">
-                        <div class="showroom"><img src="img/showroom.png" width="80%"></div>
-                        <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                        <h2 class="titltb d-blue">Productividad</h2>
-                    </a>
-                    <div class="carousel-caption">
-                         <div class="row idop">
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                                    <div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show2();" onmouseout="eliminar_tablero_hidden2();">
-                                    <div class="eliminat showandohide2" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show3();" onmouseout="eliminar_tablero_hidden3();">
-                                    <div class="eliminat showandohide3" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show4();" onmouseout="eliminar_tablero_hidden4();">
-                                    <div class="eliminat showandohide4" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-feature">
-                    <a href="#" class="b-blue">
-                        <div class="showroom"><img src="img/showroom.png" width="80%"></div>
-                        <img class="carousel-image imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                        <h2 class="titltb d-blue">Indicadores</h2>
-                    </a>
-                    <div class="carousel-caption">
-                        <div class="row idop">
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
-                                    <div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show2();" onmouseout="eliminar_tablero_hidden2();">
-                                    <div class="eliminat showandohide2" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show3();" onmouseout="eliminar_tablero_hidden3();">
-                                    <div class="eliminat showandohide3" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="#" class="b-red" onmouseover="eliminar_tablero_show4();" onmouseout="eliminar_tablero_hidden4();">
-                                    <div class="eliminat showandohide4" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-feature">
-                    <a href="personaliza.html" class="b-orange">
-                        <img class="carousel-image imagemodulo" alt="Image Caption" src="img/personalizado.jpg">
-                        <h2 class="titltb d-orange">Personalizado</h2>
-                    </a>
-                    <div class="carousel-caption">
-                          <div class="row idop">
-                            <div class="col-sm-3">
-                                <a href="personaliza.html" class="b-orange">
-                                    <img class="imagemodulo" alt="Image Caption" src="img/personalizado.jpg">
-                                    <h2 class="titltb d-orange">Agregar tablero</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="personaliza.html" class="b-orange">
-                                    <img class="imagemodulo" alt="Image Caption" src="img/personalizado.jpg">
-                                    <h2 class="titltb d-orange">Agregar tablero</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="personaliza.html" class="b-orange">
-                                    <img class="imagemodulo" alt="Image Caption" src="img/personalizado.jpg">
-                                    <h2 class="titltb d-orange">Agregar tablero</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <a href="personaliza.html" class="b-orange">
-                                    <img class="imagemodulo" alt="Image Caption" src="img/personalizado.jpg">
-                                    <h2 class="titltb d-orange">Agregar tablero</h2>
-                                </a>
-                                <div class="cuadritos">
-                                    <ul class="list-inline">
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#" class="c-activo"></a></li>
-                                        <li><a href="#"></a></li>
-                                        <li><a href="#"></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="carousel-left" class="arrowsize"><span class="lnr lnr-chevron-left"></span></div>
-            <div id="carousel-right" class="arrowsize"><span class="lnr lnr-chevron-right"></span></div>
-        </div>
+<div ng-init="init()">
+	<div class="box-container">
+		<ui-carousel slides="cabeceraShow" on-init="onCarouselInit()" slides-to-show="1" slides-to-scroll="1" initial-slide="0"
+		 on-after-change="onCarouselAfterChange(currentSlide)">
+			<carousel-item>
+				<a href="#" class="b-red">
+					<!-- <div class="showroom"><img src="img/showroom.png" width="80%" /></div> -->
+					<img class="imagemodulo" alt="Image Caption" src="{{ item.imagen }}" />
+					<h2 class="titltb d-red">{{ item.Grupo_Nombre }}</h2>
+				</a>
+			</carousel-item>
+			<carousel-prev>
+				<a><i class="fa fa-chevron-left" style="font-size:70px; color:white" aria-hidden="true"></i></a>
+			</carousel-prev>
 
-                <script type="text/javascript">
-            $(document).ready(function() {
-                var carousel = $("#carousel").featureCarousel({
+			<carousel-next>
+				<a><i class="fa fa-chevron-right" style="font-size:70px; color:white" aria-hidden="true"></i></a>
+			</carousel-next>
+		</ui-carousel>
+	</div>
+</div>
+<div class="row idop">
+	<div class="col-sm-3" ng-repeat="cuadro in cuadritos">
+		<a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
+			<div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img
+						 src="img/eliminat.png"></div>
+			<img class="imagemodulo" alt="Image Caption" src="{{cuadro.imagen}}">
+			<h2 class="titltb d-red">{{cuadro.Img_Titulo}}</h2>
+		</a><br>
+	</div>
+</div>
 
-                });
-            });
-            function eliminar_tablero_show1(){ 
-                $(".showandohide1").show();
-            }
-            function eliminar_tablero_hidden1(){ 
-                $(".showandohide1").hide();
-            }
-            function eliminar_tablero_show2(){ 
-                $(".showandohide2").show();
-            }
-            function eliminar_tablero_hidden2(){ 
-                $(".showandohide2").hide();
-            }
-            function eliminar_tablero_show3(){ 
-                $(".showandohide3").show();
-            }
-            function eliminar_tablero_hidden3(){ 
-                $(".showandohide3").hide();
-            }
-            function eliminar_tablero_show4(){ 
-                $(".showandohide4").show();
-            }
-            function eliminar_tablero_hidden4(){ 
-                $(".showandohide4").hide();
-            }
-        </script>
-        
+<script type="text/javascript">
+    function eliminar_tablero_show1() {
+        $(".showandohide1").show();
+    }
+    function eliminar_tablero_hidden1() {
+        $(".showandohide1").hide();
+    }
+    function eliminar_tablero_show2() {
+        $(".showandohide2").show();
+    }
+    function eliminar_tablero_hidden2() {
+        $(".showandohide2").hide();
+    }
+    function eliminar_tablero_show3() {
+        $(".showandohide3").show();
+    }
+    function eliminar_tablero_hidden3() {
+        $(".showandohide3").hide();
+    }
+    function eliminar_tablero_show4() {
+        $(".showandohide4").show();
+    }
+    function eliminar_tablero_hidden4() {
+        $(".showandohide4").hide();
+    }
+</script>
+
+<!-- </div> -->

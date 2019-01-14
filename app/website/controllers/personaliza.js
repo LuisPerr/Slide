@@ -103,6 +103,7 @@ Personaliza.prototype.get_nombreTablero = function (req, res, next) {
         { name: 'idGrp', value: req.query.idGrp, type: self.model.types.INT }
     ];
     this.model.query('INS_GRUPO_SP', params, function (error, result) {
+        console.log('result', result);
         self.view.expositor(res, {
             error: error,
             result: result
