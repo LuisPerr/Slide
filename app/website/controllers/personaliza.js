@@ -99,7 +99,8 @@ Personaliza.prototype.post_guarda = function (req, res, next) {
 Personaliza.prototype.get_nombreTablero = function (req, res, next) {
     var self = this;
     var params = [
-        { name: 'nombre', value: req.query.nombre, type: self.model.types.STRING }
+        { name: 'nombre', value: req.query.nombre, type: self.model.types.STRING },
+        { name: 'idGrp', value: req.query.idGrp, type: self.model.types.INT }
     ];
     this.model.query('INS_GRUPO_SP', params, function (error, result) {
         self.view.expositor(res, {
@@ -125,4 +126,19 @@ Personaliza.prototype.get_detalleGrupo = function (req, res, next) {
     });
 };
 
+
+//Sel el detalle del grupo y Cabecera
+Personaliza.prototype.get_grupoTablero = function (req, res, next) {
+    var self = this;
+    var params = [
+        { name: 'grupo_id', value: req.query.id, type: self.model.types.INT }
+    ];
+    
+    this.model.query('SEL_GRUPO_DETALLE_SP', params, function (error, result) {
+        self.view.expositor(res, {
+            error: error,
+            result: result
+        });
+    });
+};
 module.exports = Personaliza;

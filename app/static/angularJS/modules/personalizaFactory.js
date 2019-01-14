@@ -13,9 +13,9 @@ app.factory("Personaliza", function($http, $cookies) {
                 estatus: status,
             });
         },
-        guardaNombreTablero: function(nombre) {
+        guardaNombreTablero: function(nombre,idGrp) {
             return $http.get(urlTableros + 'nombreTablero', {
-                params:{nombre:nombre}
+                params:{nombre:nombre,idGrp:idGrp}
             });
         },
         guardaDetalleGrupo: function(idGrupo, idImagen) {
@@ -25,6 +25,13 @@ app.factory("Personaliza", function($http, $cookies) {
                     idImagen: idImagen
                 }
             });
-        }
+        },
+        getGrupoTablero: function(id) {
+            return $http.get(urlTableros + 'grupoTablero', {
+                params:{
+                    id: id
+                }
+            });
+        },
     }
 });

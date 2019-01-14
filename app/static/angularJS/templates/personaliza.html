@@ -67,7 +67,7 @@
             <div class="row" dnd-list="models.lists.A" style="height: 200px;">
                 <div class="col-sm-2" ng-repeat="item in models.lists.A" dnd-draggable="item" dnd-moved="models.lists.A.splice($index, 1)"
                     dnd-effect-allowed="move" dnd-selected="models.selected = item" ng-class="{'selected': models.selected === item}">
-                    <a href="#" data-toggle="modal" data-target="#editaImagen" ng-click="edita(item)" class="b-red spacedown">
+                    <a id ="{{item.Img_id}}" data-toggle="modal" data-target="#editaImagen"  class="b-red spacedown">
                         <img class="imagemodulo" alt="Image Caption" ng-src="{{item.imagen}}" width="70px" height="70px">
                         <h2 class="titltb d-red">{{item.Img_Titulo}}</h2>
                     </a>
