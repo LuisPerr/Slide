@@ -5,43 +5,6 @@ var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies', 'dndLis
             requireBase: false
         });
         $stateProvider
-            .state('login', {
-                url: '/login',
-                views: {
-                    admin: {
-                        templateUrl: '/angularJS/templates/login.html',
-                        controller: 'loginController'
-                    }
-                }
-            })
-            .state('signup', {
-                url: '/registro',
-                views: {
-                    admin: {
-                        templateUrl: '/angularJS/templates/signup.html',
-                        controller: 'signupController'
-                    }
-                }
-
-            })
-            .state('inicio', {
-                url: '/',
-                views: {
-                    admin: {
-                        templateUrl: '/angularJS/templates/inicio.html',
-                        controller: 'inicioController'
-                    }
-                }
-            })
-            .state('administrador', {
-                url: '/administrador',
-                views: {
-                    admin: {
-                        templateUrl: '/angularJS/templates/administrador.html',
-                        controller: 'adminController'
-                    }
-                }
-            })
             .state('personaliza', {
                 url: '/personaliza',
                 views: {
@@ -60,7 +23,7 @@ var app = angular.module('app', ['ui.router', 'httpHelper', 'ngCookies', 'dndLis
                     }
                 }
             })
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/home');
     });
 
 app.directive('resize', function($window) {

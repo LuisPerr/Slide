@@ -2,22 +2,22 @@
 <script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
 <button ng-click="irPersonalizar(1)">ok</button>
-    <div class="carousel-container">
+    <div class="carousel-container" ng-init="init()">
             <div id="carousel" class="sepa">
-                <div class="carousel-feature">
+                <div class="carousel-feature" ng-repeat="cabeza in cabeceraShow">
                     <div class="showroom"><img src="img/showroom.png" width="80%"></div>
-                    <a href="#" class="b-blue">
-                        <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                        <h2 class="titltb d-blue">Productividad</h2>
+                    <a href="#" class="b-blue" >
+                        <img class="imagemodulo" alt="Image Caption" ng-src="{{cabeza.imagen}}">
+                        <h2 class="titltb d-blue">{{cabeza.Grupo_Nombre}}</h2>
                     </a>
                     
-                    <div class="carousel-caption">
+                    <div class="carousel-caption" >
                         <div class="row idop">
-                            <div class="col-sm-3">
+                            <div class="col-sm-1" >
                                 <a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
                                     <div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img src="img/eliminat.png"></div>
-                                    <img class="imagemodulo" alt="Image Caption" src="img/graficas.jpg">
-                                    <h2 class="titltb d-red">Productividad</h2>
+                                    <img class="imagemodulo" alt="Image Caption" ng-src="{{cabeza.imagen}}"">
+                                    <h2 class="titltb d-red">{{cabeza.Grupo_Nombre}}</h2>
                                 </a>
                                 <div class="cuadritos">
                                     <ul class="list-inline">

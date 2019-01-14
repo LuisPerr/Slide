@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Libreria de Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900italic' rel='stylesheet' type='text/css' |link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900italic' rel='stylesheet'
+        type='text/css' |link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900italic'
+        rel='stylesheet' type='text/css'>
     <!--Hojas de estilos-->
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/bootstrap.css" rel="stylesheet" />
@@ -21,13 +23,11 @@
     <link href="/css/plugins/toastr/toastr.min.css" rel="stylesheet" />
     <link href="css/ui-carousel.css" rel="stylesheet" />
 
-    <!--link href="css/plugins/dropzone/basic.css" rel="stylesheet"-->
-
     <link href="/css/style.default.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/portal.css" rel="stylesheet" />
     <link href="/css/prueba.css" rel="stylesheet" />
-    <link href="/css/inicio.css" rel="stylesheet"/>
+    <link href="/css/inicio.css" rel="stylesheet" />
 
     <link href="css/general.css" rel="stylesheet">
     <link href="css/feature-carousel.css" rel="stylesheet">
@@ -49,45 +49,21 @@
     <script src="/js/angular-drag-and-drop-lists.js"></script>
     <script src="/js/ui-carousel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.5.5/angular-locale_es-mx.min.js"></script>
-    
 
-    
-    <!--script src="js/libs/angular-file-upload/dist/angular-file-upload.min.js"></script-->
-    <!--LQMA add 15092017-->
     <link href="css/datepicker3.css" rel="stylesheet">
 
 </head>
 
 <body ng-app="app">
-    <!-- <div id="top">
-        <div class="">
-            <div class="row">
-                <div class="col-xs-offset-8 col-xs-2 text-right">
-                    <img src="images/Footer/icono_what_footer.png" />
-                    <span class="FontH3">
-                        044 55350243
-                    </span>
-                </div>
-                <div class="col-xs-2 text-center">
-                    <div class="contact">
-                        <img src="images/Header/icono-face.png" />
-                        <span class="FontH3">
-                            facebook
-                        </span>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="espacio">
+                <a href="index.html"><img src="img/banorte-white.png" width="200px;"></a>
             </div>
         </div>
-    </div> -->
-    <div class="row">
-            <div class="col-sm-6">
-                <div class="espacio">
-                    <a href="index.html"><img src="img/banorte-white.png" width="200px;"></a>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="perfil">
-                    <a href="#">
+        <div class="col-sm-6">
+            <div class="perfil">
+                <a href="#">
                     <ul class="list-inline">
                         <li><img src="img/gente.jpg" width="100%" class="picperfil"></li>
                         <li>David Gómez</li>
@@ -95,37 +71,31 @@
                             <img src="img/arrow-down.svg" width="20" height="20">
                         </li>
                     </ul>
-                    </a>
-                </div>
+                </a>
             </div>
         </div>
+    </div>
     <div ui-view="admin" style="height:100%;"></div>
-    
+
 
     <!--Librerias de aplicación angular-->
     <script src="/angularJS/app.js"></script>
     <!--librerias de componenetes-->
     
-    <script src="/angularJS/modules/userFactory.js"></script>
     <script src="/angularJS/modules/alertFactory.js"></script>
     <script src="/angularJS/modules/httpProvider.js"></script>
     <script src="/angularJS/modules/alertUtilFactory.js"></script>
     <script src="/angularJS/modules/personalizaFactory.js"></script>
+    <script src="/angularJS/modules/homeFactory.js"></script>
 
-    <!--Controllers-->
-    <script src="/angularJS/pages/login/loginController.js"></script>
-    <script src="/angularJS/pages/signup/signupController.js"></script>
-    <script src="/angularJS/pages/admin/userController.js"></script>
-    
-    <script src="/angularJS/pages/inicioController.js"></script>
-    <script src="/angularJS/pages/adminController.js"></script>
+    <!--Controllers-->    
     <script src="/angularJS/pages/personalizaController.js"></script>
     <script src="/angularJS/pages/homeController.js"></script>
-
-    <!--LQMA add 12092017-->
+    
     <script src="js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" />
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 
 </body>
+
 </html>
