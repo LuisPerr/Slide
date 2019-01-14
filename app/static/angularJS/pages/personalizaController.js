@@ -108,10 +108,8 @@ app.controller('personalizaController', function ($scope, $location, $state,$roo
             });
         }else{
             $scope.loadingOrder = false;
-            $('#saveGrupos').modal('hide');
-            AlertFactory.success('Se guardo con éxito.');
-            setTimeout(function(){ $state.go('home'); }, 1000);
-            
+            AlertFactory.success('Se guardo con éxito.');     
+            $state.go('home');       
         };
     };
 

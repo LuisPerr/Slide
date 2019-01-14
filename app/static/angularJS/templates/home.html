@@ -1,14 +1,13 @@
 <script src="js/jquery-1.7.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.featureCarousel.js" type="text/javascript" charset="utf-8"></script>
-<button ng-click="irPersonalizar(1)">ok</button>
 <div ng-init="init()">
 	<div class="box-container">
-		<ui-carousel slides="cabeceraShow" on-init="onCarouselInit()" slides-to-show="1" slides-to-scroll="1" initial-slide="0"
+		<ui-carousel slides="cabeceraShow" on-init="onCarouselInit()" slides-to-show="3" slides-to-scroll="1" initial-slide="1"
 		 on-after-change="onCarouselAfterChange(currentSlide)">
 			<carousel-item>
 				<a href="#" class="b-red">
 					<!-- <div class="showroom"><img src="img/showroom.png" width="80%" /></div> -->
-					<img class="imagemodulo" alt="Image Caption" src="{{ item.imagen }}" />
+					<img class="imagemodulo" alt="Image Caption" src="{{ item.imagen }}" ng-click="$parent.$parent.irPersonalizar(item.Grupo_id)"/>
 					<h2 class="titltb d-red">{{ item.Grupo_Nombre }}</h2>
 				</a>
 			</carousel-item>
@@ -22,9 +21,9 @@
 		</ui-carousel>
 	</div>
 </div>
-<div class="row idop">
+<div class="row idop" id="minis">
 	<div class="col-sm-3" ng-repeat="cuadro in cuadritos">
-		<a href="#" class="b-red" onmouseover="eliminar_tablero_show1();" onmouseout="eliminar_tablero_hidden1();">
+		<a href="#" class="b-red">
 			<div class="eliminat showandohide1" data-fancybox data-src="#eliminar-tablero" href="javascript:;" style="display:none;"><img
 						 src="img/eliminat.png"></div>
 			<img class="imagemodulo" alt="Image Caption" src="{{cuadro.imagen}}">
@@ -34,6 +33,7 @@
 </div>
 
 <script type="text/javascript">
+
     function eliminar_tablero_show1() {
         $(".showandohide1").show();
     }

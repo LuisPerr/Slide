@@ -1,6 +1,8 @@
 app.controller('homeController', function ($scope, $rootScope, $location, $state, Home, AlertFactory) {
 	$scope.cabeceras = [];
-	$scope.cabeceraShow = []
+	$scope.cabeceraShow = [];
+	$('body').removeClass('modal-open');
+	$('.modal-backdrop').remove();
 
 	$scope.init = function () {
 		$scope.allHeaders();
@@ -23,15 +25,14 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 		});
 	};
 
-	$scope.irPersonalizar = function (accion) {
-		if (accion == 1) {
+	$scope.irPersonalizar = function (idGrupo) {
+		if (idGrupo != 999999) {
 			$rootScope.accion = 1;
-			$rootScope.idGrupo = 11;
+			$rootScope.idGrupo = idGrupo;
 		}
-		else {
+		else 
 			$rootScope.accion = 0;
-		}
-
+		
 		$state.go('personaliza');
 	};
 
@@ -41,7 +42,7 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 	};
 
 	$scope.onCarouselAfterChange = function (dato) {
-		console.log($scope.cabeceraShow[dato].Grupo_id);
+		//console.log($scope.cabeceraShow[dato].Grupo_id);
 		if($scope.cabeceraShow[dato].Grupo_id == 999999){
 			$scope.cuadritos = [
 				{GI_Grupo_id: 999999, GI_Img_id: 999999, GI_id: 999999, Img_Titulo: "Personaliza", imagen: "/files/personalizado.jpg"},
@@ -52,7 +53,7 @@ app.controller('homeController', function ($scope, $rootScope, $location, $state
 		}else{
 			Home.detalleGrupo($scope.cabeceraShow[dato].Grupo_id).then(function(response){
 				$scope.cuadritos = response.data;
-				console.log('$scope.cuadritos', $scope.cuadritos);
+				//console.log('$scope.cuadritos', $scope.cuadritos);
 			});
 		};
 	};
