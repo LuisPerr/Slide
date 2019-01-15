@@ -142,7 +142,7 @@ app.controller('personalizaController', function ($scope, $location, $state,$roo
                 }
             });
             this.on("success", function(event, res) {
-                AlertFactory.info('Tablero Guardado con exito');
+                AlertFactory.success('Tablero Guardado con exito');
                  $scope.limpia();
                  $('#subeImagen').modal('hide');
                  $scope.$apply()
@@ -155,7 +155,11 @@ app.controller('personalizaController', function ($scope, $location, $state,$roo
     });
 
     $scope.uploadInvoice = function () {
-        dropzone.processQueue();
+        if( $scope.nomTablero == '' ){
+            AlertFactory.info('Coloca una nombre al tablero');
+        }else{
+            dropzone.processQueue();
+        };
     };
 
 
